@@ -31,9 +31,5 @@ class UserRoleManager
         }
         return $users;
     }
-
-    public function getRoleByUserId () :array {
-        $roles = [];
-        return $roles;
-    }
+    
 }
