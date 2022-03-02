@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model\Entity;
+
 class AbstractEntity
 {
     private ?int $id;
@@ -15,9 +17,10 @@ class AbstractEntity
     /**
      * @param int|null $id
      */
-    public function setId(?int $id): void
+    public function setId(?int $id): self
     {
         $this->id = $id;
+        return $this;
     }
 
 

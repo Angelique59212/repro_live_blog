@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model\Entity;
+
 class Comment extends AbstractEntity
 {
     private string $content;
@@ -15,10 +17,12 @@ class Comment extends AbstractEntity
 
     /**
      * @param string $content
+     * @return Comment
      */
-    public function setContent(string $content): void
+    public function setContent(string $content): self
     {
         $this->content = $content;
+        return $this;
     }
 
 

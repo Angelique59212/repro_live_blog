@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Model\Entity;
+
+
 class User extends AbstractEntity
 {
     private string $email;
@@ -18,10 +21,12 @@ class User extends AbstractEntity
 
     /**
      * @param string $email
+     * @return User
      */
-    public function setEmail(string $email): void
+    public function setEmail(string $email): self
     {
         $this->email = $email;
+        return $this;
     }
 
     /**
@@ -34,10 +39,12 @@ class User extends AbstractEntity
 
     /**
      * @param string $firstName
+     * @return User
      */
-    public function setFirstName(string $firstName): void
+    public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
+        return $this;
     }
 
     /**
@@ -50,18 +57,30 @@ class User extends AbstractEntity
 
     /**
      * @param string $lastname
+     * @return User
      */
-    public function setLastname(string $lastname): void
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword() : string
+    {
+        return $this->password;
     }
 
     /**
      * @param string $password
+     * @return User
      */
-    public function setPassword(string $password): void
+    public function setPassword(string $password): self
     {
         $this->password = $password;
+        return $this;
     }
 
     /**
@@ -74,12 +93,12 @@ class User extends AbstractEntity
 
     /**
      * @param int $age
+     * @return User
      */
-    public function setAge(int $age): void
+    public function setAge(int $age): self
     {
         $this->age = $age;
+        return $this;
     }
-
-
 
 }

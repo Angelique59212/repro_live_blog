@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Model\Entity;
+
+use DateTime;
+use User;
+
 class Article extends AbstractEntity
 {
 
@@ -7,6 +12,25 @@ class Article extends AbstractEntity
     private string $content;
     private DateTime $dateAdd;
     private DateTime $dateUpdate;
+    private User $author;
+
+    /**
+     * @return User
+     */
+    public function getAuthor(): User
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param User $author
+     * @return Article
+     */
+    public function setAuthor(User $author): self
+    {
+        $this->author = $author;
+        return $this;
+    }
 
 
     /**
@@ -19,10 +43,12 @@ class Article extends AbstractEntity
 
     /**
      * @param string $title
+     * @return Article
      */
-    public function setTitle(string $title): void
+    public function setTitle(string $title): self
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -35,10 +61,12 @@ class Article extends AbstractEntity
 
     /**
      * @param string $content
+     * @return Article
      */
-    public function setContent(string $content): void
+    public function setContent(string $content): self
     {
         $this->content = $content;
+        return $this;
     }
 
     /**
@@ -51,10 +79,12 @@ class Article extends AbstractEntity
 
     /**
      * @param DateTime $dateAdd
+     * @return Article
      */
-    public function setDateAdd(DateTime $dateAdd): void
+    public function setDateAdd(DateTime $dateAdd): self
     {
         $this->dateAdd = $dateAdd;
+        return $this;
     }
 
     /**
@@ -67,10 +97,12 @@ class Article extends AbstractEntity
 
     /**
      * @param DateTime $dateUpdate
+     * @return Article
      */
-    public function setDateUpdate(DateTime $dateUpdate): void
+    public function setDateUpdate(DateTime $dateUpdate): self
     {
         $this->dateUpdate = $dateUpdate;
+        return $this;
     }
 
 

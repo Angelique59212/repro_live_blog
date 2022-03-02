@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model\Entity;
+
 class Role extends AbstractEntity
 {
     private string $roleName;
@@ -14,11 +16,11 @@ class Role extends AbstractEntity
 
     /**
      * @param string $roleName
+     * @return Role
      */
-    public function setRoleName(string $roleName): void
+    public function setRoleName(string $roleName): self
     {
         $this->roleName = $roleName;
+        return $this;
     }
-
-
 }
